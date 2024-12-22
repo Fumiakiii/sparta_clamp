@@ -1,0 +1,1 @@
+This file will contain a Spartan-themed illustration to be used in the application.

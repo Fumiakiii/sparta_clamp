@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+body {
+    font-family: 'RocknRoll One', sans-serif; /* 似たスタイルのフォント */
+    background-image: url('/static/castle.png'); /* 背景画像を設定 */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #b22222;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 4.5em;
+}
+
+.level {
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 5px solid #b22222;
+    background-color: #f9f9f9;
+}
+
+.level h2 {
+    transition: all 0.3s ease;
+    transform-origin: left; /* 左を基準に拡大 */
+}
+
+.level h2:hover {
+    color: red;
+    transform: scale(1.5); /* 文字サイズを1.5倍に */
+}
+
+.level h2.active {
+    color: red;
+    transform: scale(1.5);
+}
+
+.app-icon {
+    display: block;
+    margin: 0 auto;
+    width: 160px; /* 現状のサイズからさらに倍 */
+    height: 160px; /* 現状のサイズからさらに倍 */
+    border-radius: 50%; /* 丸い形状にする */
+    object-fit: cover; /* 画像を丸く切り取る */
+}
+
+.details {
+    padding-left: 40px; /* 5文字分のセットバック */
+    font-size: 1.5em; /* 文字サイズを1.5倍に */
+}
+
+button {
+    font-size: 2em; /* 文字サイズを2倍に */
+    padding: 10px 20px; /* ボタンサイズを調整 */
+    background-color: red; /* 背景��赤に */
+    font-family: 'RocknRoll One', sans-serif; /* 他の日本語と同じフォント */
+    font-weight: bold; /* 文字を太字に */
+    color: white; /* 文字色を白に */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

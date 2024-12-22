@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>起床時間の設定</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sparta Clamp</h1>
+        <img src="/static/icon.png" alt="App Icon" class="app-icon">
+        <div class="level">
+            <h2 onclick="toggleDetails(1)" style="cursor: pointer;">レベル1: 八幡平市のふるさと納税を購入</h2>
+            <div id="details-1" class="details" style="display: none;">
+                <p>あなたが朝、設定時間に起きれない場合、八幡平のふるさと納税を購入します。制限時間は設定時間の30分です。</p>
+                <p>あなたが寝ている間に八幡平市に貢献します。控除上限額は考慮しません。</p>
+                <p>本当によろしいですか？</p>
+                <button onclick="window.location.href='/level1'">設定する</button>
+            </div>
+        </div>
+        <div class="level">
+            <h2 onclick="toggleDetails(2)" style="cursor: pointer;">レベル2: ランダムで仮想通貨を購入</h2>
+            <div id="details-2" class="details" style="display: none;">
+                <p>あなたが朝、設定時間に起きれない場合、ランダムで仮想通貨を購入します。1分ごとに100円分購入します。</p>
+                <p>あなたが寝ている間に億万長者へのチケットを手にします。</p>
+                <p>本当によろしいですか？</p>
+                <button onclick="window.location.href='/level2'">設定する</button>
+            </div>
+        </div>
+        <div class="level">
+            <h2 onclick="toggleDetails(3)" style="cursor: pointer;">レベル3: スパルタアプリへの課金</h2>
+            <div id="details-3" class="details" style="display: none;">
+                <p>あなたが朝、設定時間に起きれない場合、Sparta Clampアプリへの課金をします。1分ごとに200円分課金します。</p>
+                <p>あなたが寝ている間に自動的に課金されます。ただお金を捨てているようなものです。</p>
+                <p>本当によろしいですか？</p>
+                <button onclick="window.location.href='/level3'">設定する</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function toggleDetails(level) {
+            const allDetails = document.querySelectorAll('.details');
+            const allHeaders = document.querySelectorAll('.level h2');
+
+            allDetails.forEach((detail, index) => {
+                if (index + 1 === level) {
+                    detail.style.display = detail.style.display === "none" ? "block" : "none";
+                } else {
+                    detail.style.display = "none";
+                }
+            });
+
+            allHeaders.forEach((h, index) => {
+                if (index + 1 === level) {
+                    h.classList.toggle("active", allDetails[index].style.display === "block");
+                } else {
+                    h.classList.remove("active");
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
